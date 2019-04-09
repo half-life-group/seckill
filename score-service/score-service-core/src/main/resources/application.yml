@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: score-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:5000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

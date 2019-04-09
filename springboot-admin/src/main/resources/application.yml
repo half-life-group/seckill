@@ -1,0 +1,21 @@
+server:
+  port: 5000
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health   #健康检查的地址
+    instance-id: microservicecloud-adminserver #服务中心中该服务的注册名
+    prefer-ip-address: true #是否显示IP
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka  #注册中心地址
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+spring:
+  application:
+    name: bootadmin

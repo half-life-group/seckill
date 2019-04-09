@@ -1,0 +1,27 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+#springbootadmin 监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # SpringBootActuator监控暴露所有接口
+#网关配置
+zuul:
+  routes:
+    api-order:
+      path: /api-order/**
+      serviceId: api-order
+    api-user:
+      path: /api-user/**
+      serviceId: api-user
+    api-good:
+      path: /api-good/**
+      serviceId: api-good
