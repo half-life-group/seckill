@@ -9,11 +9,17 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <!--注册中线-->
         <module>eureka-service</module>
+        <!--网关未启用-->
         <module>server-zuul</module>
+        <!--spring-admin监控-->
         <module>springboot-admin</module>
+        <!--用户服务-->
         <module>user-service</module>
+        <!--积分服务-->
         <module>score-service</module>
+        <!--配置中心为启用-->
         <module>config-service</module>
     </modules>
     <properties>
