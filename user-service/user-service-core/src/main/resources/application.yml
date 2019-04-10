@@ -3,6 +3,18 @@ server:
 spring:
   application:
     name: user-servicee
+  #  链路追踪
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1.0
+  #springbootadmin 监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  # SpringBootActuator监控暴露所有接口
 eureka:
   client:
     serviceUrl:
