@@ -21,6 +21,7 @@
         <module>score-service</module>
         <!--配置中心为启用-->
         <module>config-service</module>
+        <module>common</module>
     </modules>
     <properties>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>

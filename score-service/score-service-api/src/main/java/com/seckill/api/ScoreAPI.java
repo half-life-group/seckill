@@ -9,4 +9,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ScoreAPI {
     @RequestMapping(value = "/getScore/{id}",method = RequestMethod.GET)
     String getScore(@PathVariable("id") String id);
+
 }
