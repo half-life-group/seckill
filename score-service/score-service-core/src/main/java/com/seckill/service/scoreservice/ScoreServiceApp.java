@@ -1,4 +1,4 @@
-package com.seckill.scoreservice;
+package com.seckill.service.scoreservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

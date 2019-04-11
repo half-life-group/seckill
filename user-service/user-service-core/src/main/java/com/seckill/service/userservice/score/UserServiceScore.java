@@ -1,6 +1,7 @@
 package com.seckill.service.userservice.score;
 
 import com.seckill.api.ScoreAPI;
+import com.seckill.entity.Score;
 import com.sekill.api.UserAPI;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

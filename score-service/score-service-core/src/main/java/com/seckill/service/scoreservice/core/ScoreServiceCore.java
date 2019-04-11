@@ -1,10 +1,10 @@
-package com.seckill.scoreservice.core;
+package com.seckill.service.scoreservice.core;
 
 import com.seckill.api.ScoreAPI;
 import com.seckill.common.utils.PageUtils;
 import com.seckill.common.utils.R;
 import com.seckill.entity.Score;
-import com.seckill.scoreservice.service.ScoreService;
+import com.seckill.service.scoreservice.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,19 +22,20 @@ public class ScoreServiceCore implements ScoreAPI {
         return "积分:"+id;
     }
 
-    /**
-     * 列表
-     */
-    @RequestMapping("/list")
-//    @RequiresPermissions("wallet:walletinnerlog:list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = scoreService.queryPage(params);
-
-        return R.ok().put("page", page);
+    @Override
+    public R save(Score score) {
+        return R.ok().put("data",scoreService.insert(score));
     }
+
+    @Override
+    public R update(Score score) {
+        return R.ok().put("data",scoreService.updateById(score));
+    }
+
     @RequestMapping("/getOne")
     public R getScore(@RequestBody Map<String,Object> params){
         Score score = scoreService.selectById(Integer.parseInt(params.get("id").toString()));
         return  R.ok().put("data",score);
     }
+
 }

@@ -1,4 +1,4 @@
-package com.seckill.scoreservice.service.impl;
+package com.seckill.service.scoreservice.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.seckill.common.utils.PageUtils;
 import com.seckill.common.utils.Query;
 import com.seckill.entity.Score;
-import com.seckill.scoreservice.dao.ScoreDao;
+import com.seckill.service.scoreservice.dao.ScoreDao;
 import com.seckill.scoreservice.service.ScoreService;
 import org.springframework.stereotype.Service;
 

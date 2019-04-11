@@ -10,11 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>score-service-api</artifactId>
     <dependencies>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.cloud</groupId>-->
-            <!--<artifactId>spring-cloud-starter-feign</artifactId>-->
-            <!--<version>1.4.0.RELEASE</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.seckill</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

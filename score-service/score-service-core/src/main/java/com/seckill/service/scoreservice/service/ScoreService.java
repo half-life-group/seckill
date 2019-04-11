@@ -1,4 +1,4 @@
-package com.seckill.scoreservice.service;
+package com.seckill.service.scoreservice.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.seckill.common.utils.PageUtils;

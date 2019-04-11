@@ -1,4 +1,4 @@
-package com.seckill.scoreservice.dao;
+package com.seckill.service.scoreservice.dao;
 
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
