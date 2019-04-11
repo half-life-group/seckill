@@ -7,7 +7,7 @@ import com.seckill.common.utils.PageUtils;
 import com.seckill.common.utils.Query;
 import com.seckill.entity.Score;
 import com.seckill.service.scoreservice.dao.ScoreDao;
-import com.seckill.scoreservice.service.ScoreService;
+import com.seckill.service.scoreservice.service.ScoreService;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
