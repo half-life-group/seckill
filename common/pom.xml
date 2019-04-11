@@ -11,11 +11,13 @@
 
     <artifactId>common</artifactId>
     <dependencies>
+        <!--mp-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
             <version>2.2.0</version>
         </dependency>
+        <!--apache springUtil-->
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
