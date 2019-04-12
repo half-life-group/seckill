@@ -26,13 +26,13 @@ public class UserServiceScore implements UserAPI {
     @Autowired
     private ScoreAPI scoreAPI;
 
-    @ApiOperation(value = "积分", notes = "积分")
+    @ApiOperation(value = "积分", notes = "积分测试")
     @Override
     public String getUserScore(@PathVariable String id) {
         System.out.println("进入user-service:" + id);
         return scoreAPI.getScore(id);
     }
-
+    @ApiOperation(value = "注册", notes = "用户注册")
     @Override
     public R registerUser(@RequestBody Map<String, Object> map) {
         Map<String, Object> result = new HashMap<>();
