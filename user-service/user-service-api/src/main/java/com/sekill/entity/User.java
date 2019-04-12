@@ -12,7 +12,7 @@ public class User implements Serializable {
     private Integer id;
     private String name;
     private String nickName;
-    private Integer phone;
+    private String phone;
     private String passWord;
     private String payPassWord;
     private String salt;
@@ -44,11 +44,11 @@ public class User implements Serializable {
         this.nickName = nickName;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

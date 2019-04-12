@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
@@ -33,14 +34,14 @@ public class UserServiceScore implements UserAPI {
     }
 
     @Override
-    public R registerUser(Map<String, Object> map) {
+    public R registerUser(@RequestBody Map<String, Object> map) {
         Map<String, Object> result = new HashMap<>();
         // 参数校验先不做了
         User user = new User();
         user.setAddTime(new Date());
         user.setName(StringUtils.getString(map.get("name")));
         user.setNickName(StringUtils.getString(map.get("nickName")));
-        user.setPhone(StringUtils.getInteger(map.get("phone")));
+        user.setPhone(StringUtils.getString(map.get("phone")));
         boolean insert = userService.insert(user);
         result.put("result",insert);
         return R.ok().put("data", result);
