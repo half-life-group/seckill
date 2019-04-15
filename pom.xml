@@ -23,6 +23,7 @@
         <module>config-service</module>
         <!--通用工具类等-->
         <module>common</module>
+        <module>auth-server</module>
 
     </modules>
     <properties>
