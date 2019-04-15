@@ -1,4 +1,4 @@
-package com.seckill.service.userservice.config;
+package com.seckill.service.scoreservice.config;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
@@ -37,7 +37,7 @@ public class Swagger2_config {
     }
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("用户文档")
+                .title("积分文档")
                 .description("别瞎动")
 //                .termsOfServiceUrl("http://127.0.0.1:8081/Api")
                 .version("1.0")

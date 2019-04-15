@@ -6,8 +6,7 @@ import com.seckill.common.utils.StringUtils;
 import com.seckill.service.userservice.service.UserService;
 import com.sekill.api.UserAPI;
 import com.sekill.entity.User;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,6 +32,11 @@ public class UserServiceScore implements UserAPI {
         return scoreAPI.getScore(id);
     }
     @ApiOperation(value = "注册", notes = "用户注册")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "name", value = "jack", required = true, dataType = "string", paramType = "query"),
+//            @ApiImplicitParam(name = "nickName", value = "jack", required = true, dataType = "string", paramType = "query"),
+//            @ApiImplicitParam(name = "phone", value = "139********", required = true, dataType = "string", paramType = "query")
+//    })
     @Override
     public R registerUser(@RequestBody Map<String, Object> map) {
         Map<String, Object> result = new HashMap<>();
