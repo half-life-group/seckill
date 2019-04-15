@@ -16,12 +16,16 @@ management:
 #网关配置
 zuul:
   routes:
-    api-order:
-      path: /api-order/**
-      serviceId: api-order
+    auth:
+      path: /auth/**
+      serviceId: auth-server
+#    api-order:
+#      path: /api-order/**
+#      sensitiveHeaders:
+#      serviceId: order-service
     api-user:
       path: /api-user/**
-      serviceId: api-user
+      serviceId: user-service
     api-good:
-      path: /api-good/**
-      serviceId: api-good
+      path: /api-score/**
+      serviceId: score-service

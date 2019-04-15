@@ -1,6 +1,7 @@
 package com.sekill.api;
 
 import com.seckill.common.utils.R;
+import com.sekill.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,4 +15,7 @@ public interface UserAPI {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     R registerUser(@RequestBody Map<String,Object> map);
+
+    @RequestMapping(value = "/findByUserName", method = RequestMethod.GET)
+    User findByUserName(@RequestBody String userName);
 }
