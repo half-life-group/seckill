@@ -2,3 +2,8 @@ com.seckill.common 工具包,通用包
 com.seckill.entity 实体类 和 api放在了一个包(com.seckill)下
 com.seckill.api 接口包 各个微服务在该结构下自行命名, 例如 com.seckill.api.UserApi
 com.seckill.service 服务包 各个微服务在该结构下自行命名, 例如 com.seckill.service.userservice
+
+
+
+git clean -df 撤销本地所有未提交的修改, 未提交!!!!
+
