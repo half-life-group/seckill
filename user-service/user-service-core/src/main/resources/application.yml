@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: user-servicee
+    name: user-service
   profiles:
     active: dev
   #  链路追踪
@@ -12,6 +12,13 @@ spring:
     sampler:
       probability: 1.0
   #springbootadmin 监控
+  boot:
+    admin:
+      client:
+        username: admin
+        password: admin
+        instance:
+          management-base-url: http://localhost:5000
 management:
   endpoints:
     web:
@@ -19,8 +26,17 @@ management:
         include: '*'  # SpringBootActuator监控暴露所有接口
 eureka:
   client:
+    register-with-eureka: false
+    fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+security:
+  oauth2:
+    resource:
+      id: user-service
+      #指定用户信息地址
+      user-info-uri: https://localhost:8769/auth/user
+      prefer-token-info: false
 #  mybatis-plus配置
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml

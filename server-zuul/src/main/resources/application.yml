@@ -8,6 +8,10 @@ spring:
   application:
     name: service-zuul
 #springbootadmin 监控
+  boot:
+    admin:
+      client:
+        url: http://localhost:5000
 management:
   endpoints:
     web:
@@ -15,13 +19,25 @@ management:
         include: '*'  # SpringBootActuator监控暴露所有接口
 #网关配置
 zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  ignored-services: '*'
   routes:
-    api-order:
-      path: /api-order/**
-      serviceId: api-order
+    auth:
+      path: /auth/**
+      sensitiveHeaders:
+      serviceId: auth-server
+#    api-order:
+#      path: /api-order/**
+#      sensitiveHeaders:
+#      serviceId: order-service
     api-user:
       path: /api-user/**
-      serviceId: api-user
+      sensitiveHeaders:
+      serviceId: user-service
     api-good:
-      path: /api-good/**
-      serviceId: api-good
+      path: /api-score/**
+      sensitiveHeaders:
+      serviceId: score-service
+  add-proxy-headers: true

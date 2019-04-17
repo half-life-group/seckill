@@ -1,13 +1,20 @@
 package com.seckill.service.userservice.score;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.seckill.api.ScoreAPI;
 import com.seckill.common.utils.R;
 import com.seckill.common.utils.StringUtils;
 import com.seckill.service.userservice.service.UserService;
 import com.sekill.api.UserAPI;
 import com.sekill.entity.User;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,18 +32,15 @@ public class UserServiceScore implements UserAPI {
     @Autowired
     private ScoreAPI scoreAPI;
 
+    @PreAuthorize("hasRole('admin')")
     @ApiOperation(value = "积分", notes = "积分测试")
     @Override
     public String getUserScore(@PathVariable String id) {
         System.out.println("进入user-service:" + id);
         return scoreAPI.getScore(id);
     }
+
     @ApiOperation(value = "注册", notes = "用户注册")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "name", value = "jack", required = true, dataType = "string", paramType = "query"),
-//            @ApiImplicitParam(name = "nickName", value = "jack", required = true, dataType = "string", paramType = "query"),
-//            @ApiImplicitParam(name = "phone", value = "139********", required = true, dataType = "string", paramType = "query")
-//    })
     @Override
     public R registerUser(@RequestBody Map<String, Object> map) {
         Map<String, Object> result = new HashMap<>();
@@ -47,7 +51,15 @@ public class UserServiceScore implements UserAPI {
         user.setNickName(StringUtils.getString(map.get("nickName")));
         user.setPhone(StringUtils.getString(map.get("phone")));
         boolean insert = userService.insert(user);
-        result.put("result",insert);
+        result.put("result", insert);
         return R.ok().put("data", result);
+    }
+
+    @Override
+    public User findByUserName(String userName) {
+        Wrapper<User> userWrapper = new EntityWrapper<>();
+        userWrapper.eq("name", userName);
+        User user = userService.selectOne(userWrapper);
+        return user;
     }
 }
