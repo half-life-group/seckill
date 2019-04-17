@@ -37,7 +37,7 @@ public class Swagger2_config {
     }
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("用户文档")
+                .title("自制API文档")
                 .description("别瞎动")
 //                .termsOfServiceUrl("http://127.0.0.1:8081/Api")
                 .version("1.0")

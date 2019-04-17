@@ -19,15 +19,10 @@ management:
         include: '*'  # SpringBootActuator监控暴露所有接口
 eureka:
   client:
+    register-with-eureka: false
+    fetch-registry: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-security:
-  oauth2:
-    resource:
-      id: user-service
-      #指定用户信息地址
-      user-info-uri: https://localhost:8769/auth/user
-      prefer-token-info: false
+      defaultZone: http://192.168.27.30:8761/eureka/
 #  mybatis-plus配置
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml

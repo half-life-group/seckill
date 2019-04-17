@@ -41,11 +41,6 @@ public class UserServiceScore implements UserAPI {
     }
 
     @ApiOperation(value = "注册", notes = "用户注册")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "name", value = "jack", required = true, dataType = "string", paramType = "query"),
-//            @ApiImplicitParam(name = "nickName", value = "jack", required = true, dataType = "string", paramType = "query"),
-//            @ApiImplicitParam(name = "phone", value = "139********", required = true, dataType = "string", paramType = "query")
-//    })
     @Override
     public R registerUser(@RequestBody Map<String, Object> map) {
         Map<String, Object> result = new HashMap<>();
