@@ -11,10 +11,6 @@ import com.sekill.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +28,6 @@ public class UserServiceScore implements UserAPI {
     @Autowired
     private ScoreAPI scoreAPI;
 
-    @PreAuthorize("hasRole('admin')")
     @ApiOperation(value = "积分", notes = "积分测试")
     @Override
     public String getUserScore(@PathVariable String id) {
