@@ -6,30 +6,16 @@ eureka:
     health-check-url-path: /actuator/health   #健康检查的地址
     instance-id: microservicecloud-adminserver #服务中心中该服务的注册名
     prefer-ip-address: true #是否显示IP
-    metadata-map:
-      user.name: admin
-      user.password: admin
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: http://192.168.27.30:8761/eureka  #注册中心地址
+      defaultZone: http://localhost:8761/eureka  #注册中心地址
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"  #<2>
-  endpoint:
-    health:
-      show-details: ALWAYS
+        include: "*"
 spring:
   application:
     name: bootadmin
-#  boot:
-#    admin:
-#      discovery:
-#        ignored-services: bootadmin
-  security:
-    user:
-      name: admin
-      password: admin
