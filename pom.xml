@@ -24,6 +24,7 @@
         <!--通用工具类等-->
         <module>common</module>
         <module>auth-server</module>
+        <module>mytest</module>
 
     </modules>
     <properties>
