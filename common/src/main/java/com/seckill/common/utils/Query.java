@@ -19,6 +19,7 @@ public class Query<T> extends LinkedHashMap<String, Object> {
      * mybatis-plus分页参数
      */
     private Page<T> page;
+
     /**
      * 当前页码
      */
